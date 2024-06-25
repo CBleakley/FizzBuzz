@@ -57,46 +57,64 @@
 //     console.log(output);
 // }
 
-// part 2.2
-for (let i = 1; i <= 100; i++) {
+// part 2.3
+// for (let i = 1; i <= 100; i++) {
 
-    let multipleEleven: boolean = (i % 11 === 0);
-    let multipleThirteen: boolean = (i % 13 === 0);
+//     let multipleEleven: boolean = (i % 11 === 0);
+//     let multipleThirteen: boolean = (i % 13 === 0);
 
-    let output: string = "";
+//     let output: string = "";
 
-    if (multipleEleven) {
+//     if (multipleEleven) {
         
-        if(multipleThirteen) {
-            output += "Fezz"
-        }
-        output += "Bong"
+//         if(multipleThirteen) {
+//             output += "Fezz"
+//         }
+//         output += "Bong"
     
+//     } else {
+        
+//         let multipleThree: boolean  = (i % 3 === 0);
+//         let multipleFive: boolean = (i % 5 === 0);
+//         let multipleSeven: boolean = (i % 7 === 0);
+
+//         if (multipleThree) {
+//             output += "Fizz";
+//         }
+//         if (multipleThirteen) {
+//             output += "Fezz";
+//         }
+//         if (multipleFive) {
+//             output += "Buzz";
+//         }
+//         if (multipleSeven) {
+//             output += "Bang";
+//         }
+//         if (!output) {
+//             output += i;
+//         }
+
+//     }
+//     console.log(output);
+// }
+
+
+// part 2.4
+for (let i = 1; i <= 255; i++) {
+
+    let stringArr: String[] = [];
+
+    if (i % 3 === 0) { stringArr = stringArr.concat("Fizz") }
+    if (i % 13 === 0) { stringArr = stringArr.concat("Fezz") }
+    if (i % 5 === 0) { stringArr = stringArr.concat("Buzz") }
+    if (i % 7 === 0) { stringArr = stringArr.concat("Bang") }
+    if (i % 11 === 0) { stringArr = ["Bong"] }
+    if (i % 143 === 0) { stringArr = ["Fezz", "Bong"] }
+    if (i % 17 === 0) { stringArr = stringArr.reverse() }
+
+    if (stringArr.length === 0) {
+        console.log(i.toString())
     } else {
-        
-        let multipleThree: boolean  = (i % 3 === 0);
-        let multipleFive: boolean = (i % 5 === 0);
-        let multipleSeven: boolean = (i % 7 === 0);
-        
-        
-
-        if (multipleThree) {
-            output += "Fizz";
-        }
-        if (multipleThirteen) {
-            output += "Fezz";
-        }
-        if (multipleFive) {
-            output += "Buzz";
-        }
-        if (multipleSeven) {
-            output += "Bang";
-        }
-        if (!output) {
-            output += i;
-        }
-
+        console.log(stringArr.join(""));
     }
-    console.log(output);
 }
-
